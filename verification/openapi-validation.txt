@@ -1,0 +1,1 @@
+PASS: OpenAPI 3.0.3 schema validation; two related operations, reusable components, Bearer security.

@@ -1,0 +1,34 @@
+@startuml
+!pragma layout smetana
+skinparam dpi 180
+skinparam shadowing false
+skinparam defaultFontName DejaVu Sans
+skinparam defaultFontSize 17
+skinparam ArrowFontSize 14
+skinparam rectangleBackgroundColor #F4F7FA
+skinparam rectangleBorderColor #455A70
+skinparam packageBackgroundColor #FFFFFF
+skinparam componentStyle uml2
+title C4 Level 2 — контейнеры АИС ЭМК
+actor "Медработник" as staff
+rectangle "АИС Электронная медицинская карта" {
+rectangle "Клиент\n[WPF / C#]" as ui
+rectangle "Интеграционный шлюз\n[ASP.NET Core / C#]" as api
+database "Хранилище пациентов\n[SQLite, учебный стенд]" as db
+file "Шифрованный аудит\n[AES-256-GCM / JSONL]" as audit
+ui --> api : HTTPS / JSON / Bearer
+api --> db : SQL, параметры
+api --> audit : Запись шифротекста
+}
+rectangle "Реестр пациентов\n[Внешняя система]" as registry
+rectangle "IdP\n[Внешняя система]" as idp
+staff --> ui : Команда загрузки
+registry --> api : JSON через адаптер
+api --> idp : OIDC / проверка токена
+note bottom of api
+В локальном стенде: HTTP только loopback,
+реестр — файл-пример, токены — учебные opaque.
+Внешние сервисы не подключались.
+end note
+
+@enduml

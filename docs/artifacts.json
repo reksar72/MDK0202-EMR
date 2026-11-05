@@ -1,0 +1,30 @@
+[
+  {
+    "id": "ARC-01",
+    "type": "Архитектурный",
+    "path": "docs/diagrams/PR02_C4_Containers.puml",
+    "owner": "Архитектор",
+    "acceptance": "Границы контейнеров и протоколы согласованы"
+  },
+  {
+    "id": "CON-01",
+    "type": "Контрактный",
+    "path": "contracts/openapi.yaml",
+    "owner": "Разработчик API",
+    "acceptance": "OpenAPI 3.0.3 валиден, DTO согласованы"
+  },
+  {
+    "id": "CODE-01",
+    "type": "Кодовой",
+    "path": "Emr.sln",
+    "owner": "Разработчик",
+    "acceptance": "Сборка 8 проектов и успешные тесты"
+  },
+  {
+    "id": "MGT-01",
+    "type": "Управленческий",
+    "path": "docs/ADR-001.md",
+    "owner": "Tech Lead",
+    "acceptance": "Контекст, решение и последствия зафиксированы"
+  }
+]

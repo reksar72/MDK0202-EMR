@@ -1,0 +1,23 @@
+*   9d6c4f3 (HEAD -> develop) Return hotfix to develop
+|\  
+* \   a9e5d7b Return release fixes to develop
+|\ \  
+| | | *   7f66d1f (tag: v1.0.1, main) Release hotfix 1.0.1
+| | | |\  
+| | | |/  
+| | |/|   
+| | * | 4244ab8 Fix safe access error message
+| | |/  
+| | *   2b5d7b4 (tag: v1.0.0) Release 1.0.0
+| | |\  
+| | |/  
+| |/|   
+| * | 76c7a3d Stabilize release 1.0.0
+|/ /  
+* |   244a69f Merge reviewed patient summary feature
+|\ \  
+| * | 6322996 Add patient summary scope
+|/ /  
+* / 92ab4ad Plan quarterly EMR update
+|/  
+* 45cd91a (tag: v0.1.0) Initialize release baseline

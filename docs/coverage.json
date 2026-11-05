@@ -1,0 +1,129 @@
+[
+  {
+    "number": 1,
+    "title": "Анализ требований и структура репозитория",
+    "report": "docs/reports/PR01_MDK0202_EMR_Shvab.docx",
+    "sections": [
+      "1.1 Роли и границы системы",
+      "1.2 Три ключевых сценария",
+      "1.3 Структура репозитория"
+    ],
+    "listing_files": [],
+    "program_required": false
+  },
+  {
+    "number": 2,
+    "title": "Уровни интеграции и взаимодействие модулей",
+    "report": "docs/reports/PR02_MDK0202_EMR_Shvab.docx",
+    "sections": [
+      "1.1 Внешние акторы и системы",
+      "1.2 Протоколы и интерфейсы",
+      "1.3 Архитектурные контейнеры"
+    ],
+    "listing_files": [],
+    "program_required": false
+  },
+  {
+    "number": 3,
+    "title": "Сопоставление данных Data Mapping",
+    "report": "docs/reports/PR03_MDK0202_EMR_Shvab.docx",
+    "sections": [
+      "1.1 Интеграционный сценарий",
+      "1.2 Таблица сопоставления",
+      "1.3 Ошибки и коллизии"
+    ],
+    "listing_files": [
+      "src/AIS.Core/PatientMapper.cs",
+      "src/AIS.Infrastructure/SqlitePatientRepository.cs",
+      "src/AIS.MappingCli/Program.cs"
+    ],
+    "program_required": true
+  },
+  {
+    "number": 4,
+    "title": "Контракты данных и валидация доступа",
+    "report": "docs/reports/PR04_MDK0202_EMR_Shvab.docx",
+    "sections": [
+      "1.1 JSON-контракт запроса",
+      "1.2 Правила валидации",
+      "1.3 Ответы и аудит"
+    ],
+    "listing_files": [
+      "src/AIS.Core/Models.cs",
+      "src/AIS.Core/AccessPolicy.cs",
+      "src/AIS.Gateway/TokenAuthentication.cs",
+      "src/AIS.Gateway/GatewayFactory.cs",
+      "src/AIS.Infrastructure/EncryptedAuditStore.cs"
+    ],
+    "program_required": true
+  },
+  {
+    "number": 5,
+    "title": "Стратегия ветвления Git Flow",
+    "report": "docs/reports/PR05_MDK0202_EMR_Shvab.docx",
+    "sections": [
+      "1.1 Модель ветвления и роли",
+      "1.2 Жизненный цикл feature и релиза",
+      "1.3 Code Review и AppSec"
+    ],
+    "listing_files": [],
+    "program_required": false
+  },
+  {
+    "number": 6,
+    "title": "Клиентская архитектура MVVM и OpenAPI",
+    "report": "docs/reports/PR06_MDK0202_EMR_Shvab.docx",
+    "sections": [
+      "1.1 Слои MVVM",
+      "1.2 Контракт OpenAPI",
+      "1.3 Реализация и обработка ошибок"
+    ],
+    "listing_files": [
+      "src/AIS.Presentation/PatientViewModel.cs",
+      "src/AIS.Infrastructure/MedicalApiClient.cs",
+      "src/AIS.UI/PatientWindow.cs",
+      "src/AIS.Desktop/Program.cs"
+    ],
+    "program_required": true
+  },
+  {
+    "number": 7,
+    "title": "Диаграммы модулей и структура решения",
+    "report": "docs/reports/PR07_MDK0202_EMR_Shvab.docx",
+    "sections": [
+      "1.1 Состав Solution",
+      "1.2 Диаграммы компонентов",
+      "1.3 Каталоги и точки запуска"
+    ],
+    "listing_files": [
+      "src/AIS.Core/Models.cs"
+    ],
+    "program_required": true
+  },
+  {
+    "number": 8,
+    "title": "Артефакты и протоколы проекта",
+    "report": "docs/reports/PR08_MDK0202_EMR_Shvab.docx",
+    "sections": [
+      "1.1 Паспорт проекта",
+      "1.2 Четыре ключевых артефакта",
+      "1.3 ADR-001"
+    ],
+    "listing_files": [],
+    "program_required": false
+  },
+  {
+    "number": 9,
+    "title": "Gitignore gitattributes и права доступа",
+    "report": "docs/reports/PR09_MDK0202_EMR_Shvab.docx",
+    "sections": [
+      "1.1 Файл gitignore",
+      "1.2 Gitattributes и Git LFS",
+      "1.3 Защита main и права"
+    ],
+    "listing_files": [
+      "verification/PR09_git_log.txt"
+    ],
+    "program_required": false
+  }
+]

@@ -1,0 +1,27 @@
+@startuml
+!pragma layout smetana
+skinparam dpi 180
+skinparam shadowing false
+skinparam defaultFontName DejaVu Sans
+skinparam defaultFontSize 17
+skinparam ArrowFontSize 14
+skinparam rectangleBackgroundColor #F4F7FA
+skinparam rectangleBorderColor #455A70
+skinparam packageBackgroundColor #FFFFFF
+skinparam componentStyle uml2
+title C4 Level 1 — контекст АИС ЭМК
+actor "Врач / медсестра" as staff
+actor "Администратор" as admin
+rectangle "АИС Электронная\nмедицинская карта\n[Software System]" as emr
+rectangle "Реестр пациентов\n[External System]" as registry
+rectangle "Корпоративный IdP\n[External System]" as idp
+staff --> emr : Просмотр назначенной карты
+admin --> emr : Настройка пользователей
+registry --> emr : Карточки пациентов
+emr --> idp : Проверка личности
+note bottom of emr
+Учебный стенд: вымышленные данные.
+Реестр и IdP — границы внешней интеграции.
+end note
+
+@enduml

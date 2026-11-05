@@ -1,0 +1,30 @@
+@startuml
+!pragma layout smetana
+skinparam dpi 180
+skinparam shadowing false
+skinparam defaultFontName DejaVu Sans
+skinparam defaultFontSize 17
+skinparam ArrowFontSize 14
+skinparam rectangleBackgroundColor #F4F7FA
+skinparam rectangleBorderColor #455A70
+skinparam packageBackgroundColor #FFFFFF
+skinparam componentStyle uml2
+title MVVM — клиент электронных медицинских карт
+rectangle "View\nPatientWindow / WPF" as view
+rectangle "ViewModel\nPatientViewModel" as vm
+interface "IMedicalApiClient\nAIS.Core" as port
+rectangle "Model\nPatientSummary / AccessRequest" as model
+rectangle "MedicalApiClient\nAIS.Infrastructure" as client
+rectangle "API Gateway" as api
+view --> vm : Binding / LoadCommand
+vm --> view : PropertyChanged
+vm --> port : async / await
+vm --> model : состояние данных
+client ..|> port
+client --> api : HTTPS / JSON
+note bottom of vm
+Нет SQL, HttpClient или кода WPF.
+Ошибка очищает прежние данные.
+end note
+
+@enduml

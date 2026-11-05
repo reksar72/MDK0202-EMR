@@ -1,0 +1,53 @@
+PASS Architecture has eight projects and independent Core
+PASS View does not reference Infrastructure
+PASS All project references resolve
+PASS Project dependency graph is acyclic
+PASS Mapping normalizes external ID and spaces
+PASS Mapping preserves policy leading zeros
+PASS Mapping date and sex
+PASS Mapping converts source offset to UTC
+PASS Mapping rejects impossible date
+PASS Mapping rejects future birth date
+PASS Mapping rejects short policy
+PASS Mapping rejects negative source ID
+PASS Mapping rejects unknown sex code
+PASS Mapping rejects timestamp without offset
+PASS Mapping rejects control characters
+PASS SQLite creates a mapped patient
+PASS Same mapping is idempotent
+PASS Older update does not overwrite record
+PASS Same version with changed data is a conflict
+PASS External ID cannot switch patient UUID
+PASS Newer mapping updates record
+PASS SQLite round-trip preserves string policy
+PASS Audit file contains no clear actor or patient ID
+PASS AES-GCM audit decrypts with the correct key
+PASS Audit uses unique random nonce
+PASS Audit rejects modified authentication tag
+PASS Audit requires a 256-bit key
+PASS API readiness
+PASS API rejects anonymous summary with 401
+PASS Admin cannot read clinical summary
+PASS Doctor without assignment cannot read patient
+PASS API summary deserializes into C# model
+PASS Summary omits policy number
+PASS Access contract accepts assigned Doctor
+PASS Repeated request ID does not duplicate access audit
+PASS Request ID collision returns 409
+PASS Invalid workstation returns 400
+PASS Empty request UUID returns 400
+PASS Doctor cannot spoof nursing purpose
+PASS Unknown client role field is rejected
+PASS Malformed UUID is rejected
+PASS Assigned missing record returns 404
+PASS MVVM load command completes against real API
+PASS MVVM sends notifications and re-enables command
+PASS MVVM rejects invalid UUID and clears old data
+PASS MVVM handles HTTP 403 without exposing old data
+PASS Client rejects nonlocal HTTP
+PASS Assigned Nurse may request NursingCare
+PASS Nurse cannot claim Treatment purpose
+PASS Null request JSON returns 400
+PASS Non-JSON request returns 415
+PASS MVVM displays malformed response error
+TOTAL PASS=52; FAIL=0

@@ -1,0 +1,33 @@
+@startuml
+!pragma layout smetana
+skinparam dpi 180
+skinparam shadowing false
+skinparam defaultFontName DejaVu Sans
+skinparam defaultFontSize 17
+skinparam ArrowFontSize 14
+skinparam rectangleBackgroundColor #F4F7FA
+skinparam rectangleBorderColor #455A70
+skinparam packageBackgroundColor #FFFFFF
+skinparam componentStyle uml2
+title C4 Level 3 — компоненты внутри шлюза
+rectangle "AIS.Gateway — ASP.NET Core" {
+component "HTTP Endpoints\nМаршруты и DTO" as endpoints
+component "TokenAuthentication\nУчебная аутентификация" as auth
+component "AccessPolicy\nCore / правила доступа" as policy
+component "IPatientRepository\nCore / порт" as port
+component "SqlitePatientRepository\nInfrastructure / адаптер" as repo
+component "IAuditStore + AES-GCM\nПорт и адаптер аудита" as audit
+auth --> endpoints : ClaimsPrincipal
+endpoints --> policy : Actor, PatientId, Purpose
+endpoints --> port : Find / Upsert
+repo ..> port : реализует
+endpoints --> audit : событие доступа
+}
+database "SQLite" as db
+repo --> db : SQL с параметрами
+note bottom of policy
+Роль берётся из серверного токена,
+не из тела запроса клиента.
+end note
+
+@enduml

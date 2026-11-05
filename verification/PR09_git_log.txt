@@ -1,0 +1,58 @@
+$ git init -b main
+Initialized empty Git repository in /workspace/scratch/c7aac5bac8ae/tmp/mdk0202/git-rules/.git/
+
+$ git config user.name Lab Developer
+
+$ git config user.email developer@example.invalid
+
+$ git lfs version
+git-lfs/3.4.1 (GitHub; linux amd64; go 1.22.2)
+
+$ git lfs install --local
+Updated Git hooks.
+Git LFS initialized.
+
+$ git lfs track *.mp4
+Tracking "*.mp4"
+
+$ git lfs track *.bin
+Tracking "*.bin"
+
+$ git check-ignore -v src/App/bin/demo.dll
+.gitignore:1:**/bin/	src/App/bin/demo.dll
+
+$ git check-ignore -v src/App/obj/cache
+.gitignore:2:**/obj/	src/App/obj/cache
+
+$ git check-ignore -v private.db
+.gitignore:7:*.db	private.db
+
+$ git check-ignore -v .env
+.gitignore:10:.env	.env
+
+$ git add .
+
+$ git status --short
+A  .gitattributes
+A  .gitignore
+A  assets/lfs-example.bin
+
+$ git lfs ls-files
+a1f259d436 * assets/lfs-example.bin
+
+$ git show :assets/lfs-example.bin
+version https://git-lfs.github.com/spec/v1
+oid sha256:a1f259d4365ed4320c377ce26f5c8c56dcdc9a89e7b641bfd8eabfbbeac86654
+size 16384
+
+$ git commit -m Configure ignore attributes and LFS exercise
+[main (root-commit) f276823] Configure ignore attributes and LFS exercise
+ 3 files changed, 31 insertions(+)
+ create mode 100644 .gitattributes
+ create mode 100644 .gitignore
+ create mode 100644 assets/lfs-example.bin
+
+$ git status --short
+
+$ git lfs fsck
+Git LFS fsck OK

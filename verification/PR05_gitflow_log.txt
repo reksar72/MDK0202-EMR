@@ -1,0 +1,142 @@
+$ git init -b main
+Initialized empty Git repository in /workspace/scratch/c7aac5bac8ae/tmp/mdk0202/gitflow/.git/
+
+$ git config user.name Lab Developer
+
+$ git config user.email developer@example.invalid
+
+$ git add .
+
+$ git commit -m Initialize release baseline
+[main (root-commit) 45cd91a] Initialize release baseline
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+$ git tag -a v0.1.0 -m Baseline
+
+$ git switch -c develop
+Switched to a new branch 'develop'
+
+$ git add .
+
+$ git commit -m Plan quarterly EMR update
+[develop 92ab4ad] Plan quarterly EMR update
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Plan.md
+
+$ git switch -c feature/patient-summary
+Switched to a new branch 'feature/patient-summary'
+
+$ git add .
+
+$ git commit -m Add patient summary scope
+[feature/patient-summary 6322996] Add patient summary scope
+ 1 file changed, 1 insertion(+)
+ create mode 100644 SummaryFeature.cs
+
+$ git switch develop
+Switched to branch 'develop'
+
+$ git merge --no-ff feature/patient-summary -m Merge reviewed patient summary feature
+Merge made by the 'ort' strategy.
+ SummaryFeature.cs | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 SummaryFeature.cs
+
+$ git branch -d feature/patient-summary
+Deleted branch feature/patient-summary (was 6322996).
+
+$ git switch -c release/1.0.0
+Switched to a new branch 'release/1.0.0'
+
+$ git add .
+
+$ git commit -m Stabilize release 1.0.0
+[release/1.0.0 76c7a3d] Stabilize release 1.0.0
+ 1 file changed, 1 insertion(+)
+ create mode 100644 CHANGELOG.md
+
+$ git switch main
+Switched to branch 'main'
+
+$ git merge --no-ff release/1.0.0 -m Release 1.0.0
+Merge made by the 'ort' strategy.
+ CHANGELOG.md      | 1 +
+ Plan.md           | 1 +
+ SummaryFeature.cs | 1 +
+ 3 files changed, 3 insertions(+)
+ create mode 100644 CHANGELOG.md
+ create mode 100644 Plan.md
+ create mode 100644 SummaryFeature.cs
+
+$ git tag -a v1.0.0 -m Release 1.0.0
+
+$ git switch develop
+Switched to branch 'develop'
+
+$ git merge --no-ff release/1.0.0 -m Return release fixes to develop
+Merge made by the 'ort' strategy.
+ CHANGELOG.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 CHANGELOG.md
+
+$ git branch -d release/1.0.0
+Deleted branch release/1.0.0 (was 76c7a3d).
+
+$ git switch main
+Switched to branch 'main'
+
+$ git switch -c hotfix/1.0.1
+Switched to a new branch 'hotfix/1.0.1'
+
+$ git add .
+
+$ git commit -m Fix safe access error message
+[hotfix/1.0.1 4244ab8] Fix safe access error message
+ 1 file changed, 1 insertion(+)
+
+$ git switch main
+Switched to branch 'main'
+
+$ git merge --no-ff hotfix/1.0.1 -m Release hotfix 1.0.1
+Merge made by the 'ort' strategy.
+ CHANGELOG.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+$ git tag -a v1.0.1 -m Hotfix 1.0.1
+
+$ git switch develop
+Switched to branch 'develop'
+
+$ git merge --no-ff hotfix/1.0.1 -m Return hotfix to develop
+Merge made by the 'ort' strategy.
+ CHANGELOG.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+$ git branch -d hotfix/1.0.1
+Deleted branch hotfix/1.0.1 (was 4244ab8).
+
+$ git log --graph --oneline --all --decorate
+*   9d6c4f3 (HEAD -> develop) Return hotfix to develop
+|\  
+* \   a9e5d7b Return release fixes to develop
+|\ \  
+| | | *   7f66d1f (tag: v1.0.1, main) Release hotfix 1.0.1
+| | | |\  
+| | | |/  
+| | |/|   
+| | * | 4244ab8 Fix safe access error message
+| | |/  
+| | *   2b5d7b4 (tag: v1.0.0) Release 1.0.0
+| | |\  
+| | |/  
+| |/|   
+| * | 76c7a3d Stabilize release 1.0.0
+|/ /  
+* |   244a69f Merge reviewed patient summary feature
+|\ \  
+| * | 6322996 Add patient summary scope
+|/ /  
+* / 92ab4ad Plan quarterly EMR update
+|/  
+* 45cd91a (tag: v0.1.0) Initialize release baseline

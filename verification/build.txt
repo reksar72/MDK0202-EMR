@@ -1,0 +1,21 @@
+Compiler: Microsoft Roslyn C# 12 from official .NET SDK 8.0.100.
+Method: direct csc.dll compilation with .NET 8 and WindowsDesktop reference assemblies.
+All eight projects compiled successfully (exit code 0).
+Standard MSBuild was not executed successfully in this sandbox because the host process metadata API is unavailable.
+WPF UI was compiled, not launched on Linux. Windows restore/build commands and CI workflow are supplied for reproduction.
+
+AIS.Core 0
+
+AIS.Infrastructure 0
+
+AIS.Presentation 0
+
+AIS.Gateway 0
+
+AIS.MappingCli 0
+
+AIS.Tests 0
+
+AIS.UI 0
+
+AIS.Desktop 0

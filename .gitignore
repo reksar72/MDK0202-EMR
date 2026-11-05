@@ -1,0 +1,17 @@
+**/bin/
+**/obj/
+.vs/
+**/.vs/
+*.user
+*.suo
+*.db
+*.db-shm
+*.db-wal
+.env
+.env.*
+secrets.json
+*.pfx
+*.p12
+*.key
+*.enc
+demo-session.json

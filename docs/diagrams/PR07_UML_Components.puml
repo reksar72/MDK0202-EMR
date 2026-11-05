@@ -1,0 +1,42 @@
+@startuml
+!pragma layout smetana
+skinparam dpi 180
+skinparam shadowing false
+skinparam defaultFontName DejaVu Sans
+skinparam defaultFontSize 17
+skinparam ArrowFontSize 14
+skinparam rectangleBackgroundColor #F4F7FA
+skinparam rectangleBorderColor #455A70
+skinparam packageBackgroundColor #FFFFFF
+skinparam componentStyle uml2
+title UML Component Diagram — зависимости проектов
+component "AIS.Core\nМодели, правила, интерфейсы" as core
+component "AIS.Infrastructure\nSQLite, HTTP, AES-GCM" as infra
+component "AIS.Presentation\nViewModel и ICommand" as vm
+component "AIS.UI\nWPF View" as ui
+component "AIS.Gateway\nAPI / composition root" as api
+component "AIS.Desktop\nDesktop composition root" as host
+component "AIS.Tests\nПрограммные проверки" as tests
+infra ..> core
+vm ..> core
+ui ..> vm
+ui ..> core
+api ..> core
+api ..> infra
+api ..> vm : проверочный интерфейс
+component "AIS.MappingCli\nИмпорт данных" as cli
+cli ..> core
+cli ..> infra
+host ..> ui
+host ..> infra
+host ..> vm
+tests ..> core
+tests ..> infra
+tests ..> vm
+tests ..> api
+note bottom of core
+Core не зависит от UI, БД или HTTP.
+Стрелка: проект использует другой проект.
+end note
+
+@enduml

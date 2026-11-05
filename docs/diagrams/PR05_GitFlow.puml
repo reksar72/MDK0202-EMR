@@ -1,0 +1,36 @@
+@startuml
+!pragma layout smetana
+skinparam dpi 180
+skinparam defaultFontName DejaVu Sans
+skinparam defaultFontSize 16
+title Проверенная локальная история Git Flow
+top to bottom direction
+rectangle "6322996\nfeature" as c6322996
+rectangle "92ab4ad\ndevelop" as c92ab4ad
+rectangle "244a69f\nfeature → develop" as c244a69f
+rectangle "76c7a3d\nrelease/1.0.0" as c76c7a3d
+rectangle "a9e5d7b\nrelease → develop" as ca9e5d7b
+rectangle "2b5d7b4\nmain / v1.0.0" as c2b5d7b4
+rectangle "45cd91a\nmain / v0.1.0" as c45cd91a
+rectangle "4244ab8\nhotfix/1.0.1" as c4244ab8
+rectangle "7f66d1f\nmain / v1.0.1" as c7f66d1f
+rectangle "9d6c4f3\nhotfix → develop" as c9d6c4f3
+c92ab4ad --> c6322996
+c45cd91a --> c92ab4ad
+c92ab4ad --> c244a69f
+c6322996 --> c244a69f
+c244a69f --> c76c7a3d
+c244a69f --> ca9e5d7b
+c76c7a3d --> ca9e5d7b
+c45cd91a --> c2b5d7b4
+c76c7a3d --> c2b5d7b4
+c2b5d7b4 --> c4244ab8
+c2b5d7b4 --> c7f66d1f
+c4244ab8 --> c7f66d1f
+ca9e5d7b --> c9d6c4f3
+c4244ab8 --> c9d6c4f3
+legend
+Стрелка: родительский коммит → дочерний.
+Это локальный учебный прогон, не история GitHub PR.
+endlegend
+@enduml

@@ -1,0 +1,215 @@
+{
+  "executedAt": "2026-11-05T20:34:47.9617928+00:00",
+  "passed": 52,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "Architecture has eight projects and independent Core",
+      "status": "PASS"
+    },
+    {
+      "name": "View does not reference Infrastructure",
+      "status": "PASS"
+    },
+    {
+      "name": "All project references resolve",
+      "status": "PASS"
+    },
+    {
+      "name": "Project dependency graph is acyclic",
+      "status": "PASS"
+    },
+    {
+      "name": "Mapping normalizes external ID and spaces",
+      "status": "PASS"
+    },
+    {
+      "name": "Mapping preserves policy leading zeros",
+      "status": "PASS"
+    },
+    {
+      "name": "Mapping date and sex",
+      "status": "PASS"
+    },
+    {
+      "name": "Mapping converts source offset to UTC",
+      "status": "PASS"
+    },
+    {
+      "name": "Mapping rejects impossible date",
+      "status": "PASS"
+    },
+    {
+      "name": "Mapping rejects future birth date",
+      "status": "PASS"
+    },
+    {
+      "name": "Mapping rejects short policy",
+      "status": "PASS"
+    },
+    {
+      "name": "Mapping rejects negative source ID",
+      "status": "PASS"
+    },
+    {
+      "name": "Mapping rejects unknown sex code",
+      "status": "PASS"
+    },
+    {
+      "name": "Mapping rejects timestamp without offset",
+      "status": "PASS"
+    },
+    {
+      "name": "Mapping rejects control characters",
+      "status": "PASS"
+    },
+    {
+      "name": "SQLite creates a mapped patient",
+      "status": "PASS"
+    },
+    {
+      "name": "Same mapping is idempotent",
+      "status": "PASS"
+    },
+    {
+      "name": "Older update does not overwrite record",
+      "status": "PASS"
+    },
+    {
+      "name": "Same version with changed data is a conflict",
+      "status": "PASS"
+    },
+    {
+      "name": "External ID cannot switch patient UUID",
+      "status": "PASS"
+    },
+    {
+      "name": "Newer mapping updates record",
+      "status": "PASS"
+    },
+    {
+      "name": "SQLite round-trip preserves string policy",
+      "status": "PASS"
+    },
+    {
+      "name": "Audit file contains no clear actor or patient ID",
+      "status": "PASS"
+    },
+    {
+      "name": "AES-GCM audit decrypts with the correct key",
+      "status": "PASS"
+    },
+    {
+      "name": "Audit uses unique random nonce",
+      "status": "PASS"
+    },
+    {
+      "name": "Audit rejects modified authentication tag",
+      "status": "PASS"
+    },
+    {
+      "name": "Audit requires a 256-bit key",
+      "status": "PASS"
+    },
+    {
+      "name": "API readiness",
+      "status": "PASS"
+    },
+    {
+      "name": "API rejects anonymous summary with 401",
+      "status": "PASS"
+    },
+    {
+      "name": "Admin cannot read clinical summary",
+      "status": "PASS"
+    },
+    {
+      "name": "Doctor without assignment cannot read patient",
+      "status": "PASS"
+    },
+    {
+      "name": "API summary deserializes into C# model",
+      "status": "PASS"
+    },
+    {
+      "name": "Summary omits policy number",
+      "status": "PASS"
+    },
+    {
+      "name": "Access contract accepts assigned Doctor",
+      "status": "PASS"
+    },
+    {
+      "name": "Repeated request ID does not duplicate access audit",
+      "status": "PASS"
+    },
+    {
+      "name": "Request ID collision returns 409",
+      "status": "PASS"
+    },
+    {
+      "name": "Invalid workstation returns 400",
+      "status": "PASS"
+    },
+    {
+      "name": "Empty request UUID returns 400",
+      "status": "PASS"
+    },
+    {
+      "name": "Doctor cannot spoof nursing purpose",
+      "status": "PASS"
+    },
+    {
+      "name": "Unknown client role field is rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Malformed UUID is rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Assigned missing record returns 404",
+      "status": "PASS"
+    },
+    {
+      "name": "MVVM load command completes against real API",
+      "status": "PASS"
+    },
+    {
+      "name": "MVVM sends notifications and re-enables command",
+      "status": "PASS"
+    },
+    {
+      "name": "MVVM rejects invalid UUID and clears old data",
+      "status": "PASS"
+    },
+    {
+      "name": "MVVM handles HTTP 403 without exposing old data",
+      "status": "PASS"
+    },
+    {
+      "name": "Client rejects nonlocal HTTP",
+      "status": "PASS"
+    },
+    {
+      "name": "Assigned Nurse may request NursingCare",
+      "status": "PASS"
+    },
+    {
+      "name": "Nurse cannot claim Treatment purpose",
+      "status": "PASS"
+    },
+    {
+      "name": "Null request JSON returns 400",
+      "status": "PASS"
+    },
+    {
+      "name": "Non-JSON request returns 415",
+      "status": "PASS"
+    },
+    {
+      "name": "MVVM displays malformed response error",
+      "status": "PASS"
+    }
+  ]
+}

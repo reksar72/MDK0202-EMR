@@ -1,0 +1,33 @@
+{
+  "AIS.Tests": [
+    "AIS.Core",
+    "AIS.Infrastructure",
+    "AIS.Presentation",
+    "AIS.Gateway"
+  ],
+  "AIS.Gateway": [
+    "AIS.Core",
+    "AIS.Infrastructure",
+    "AIS.Presentation"
+  ],
+  "AIS.Infrastructure": [
+    "AIS.Core"
+  ],
+  "AIS.UI": [
+    "AIS.Core",
+    "AIS.Presentation"
+  ],
+  "AIS.Desktop": [
+    "AIS.UI",
+    "AIS.Infrastructure",
+    "AIS.Presentation"
+  ],
+  "AIS.Presentation": [
+    "AIS.Core"
+  ],
+  "AIS.MappingCli": [
+    "AIS.Core",
+    "AIS.Infrastructure"
+  ],
+  "AIS.Core": []
+}
