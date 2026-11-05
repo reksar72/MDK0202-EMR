@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/reksar72/MDK0202-EMR",
+  "commit": "209457d",
+  "date": "2026-11-06",
+  "evidence_source": "User screenshots of GitHub pages",
+  "workflow_status": "success",
+  "workflow_duration_seconds": 53,
+  "branch_rule": "main, applies to 1 branch",
+  "required_check": "build-and-test",
+  "lfs_file": "docs/lfs-example.bin",
+  "lfs_ui_label": "Stored with Git LFS"
+}
